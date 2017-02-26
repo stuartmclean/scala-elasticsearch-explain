@@ -14,13 +14,13 @@ class ExplainParser {
     val streamContent = Json.parse(result)
     val mainNodeData = (streamContent \ "explanation").as[JsValue]
 
-    findWeightsForNode(new ExplainNode(mainNodeData, null))
+    findWeightsForNode(new ExplainNode(mainNodeData))
 
     descriptions.foldLeft("")((res, desc) => res + s"$id: $desc: " + weights(desc).toString)
   }
 
   private def findWeightsForNode(node: ExplainNode): Unit = {
-    if (node.nodeType == "result") {
+    if (List("sum", "result").contains(node.nodeType)) {
       descriptions += node.getDescriptionSummary
       weights += (node.getDescriptionSummary -> (node.absoluteImpactPercentage + weights(node.getDescriptionSummary)))
     }
