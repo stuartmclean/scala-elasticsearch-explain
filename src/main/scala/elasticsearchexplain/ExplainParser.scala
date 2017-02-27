@@ -20,7 +20,7 @@ class ExplainParser {
   }
 
   private def findWeightsForNode(node: ExplainNode): Unit = {
-    if (List("sum", "result").contains(node.nodeType)) {
+    if (node.nodeType == "result") {
       descriptions += node.getDescriptionSummary
       weights += (node.getDescriptionSummary -> (node.absoluteImpactPercentage + weights(node.getDescriptionSummary)))
     }

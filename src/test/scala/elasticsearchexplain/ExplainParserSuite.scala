@@ -14,6 +14,6 @@ class ExplainParserSuite extends FunSuite {
 
     val parser = new ExplainParser
     val result = parser.parse("1", fileContent)
-    assert(result == "1: : 100.01: name: 100.0") // todo - this is still not correct output
+    assert(result == "1: name: 100.0")
   }
 }

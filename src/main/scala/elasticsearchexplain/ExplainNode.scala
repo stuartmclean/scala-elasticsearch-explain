@@ -66,7 +66,7 @@ class ExplainNode(nodeData: JsValue, parent: ExplainNode) {
   private def getPercentageForProductParent: Double = {
     val neighbours = parent.children
 
-    if (neighbours != Nil && neighbours.length > 1) {
+    if (neighbours.length > 1) {
       val scoreSum = neighbours.foldLeft(0.0)((acc, node) => acc + node.score)
       val multiplier = 100.0 / scoreSum
       val parentMultiplier = parent.absoluteImpactPercentage / 100.0
