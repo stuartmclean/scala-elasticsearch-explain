@@ -1,0 +1,70 @@
+{
+  "took": 3,
+  "timed_out": false,
+  "_shards": {
+    "total": 4,
+    "successful": 4,
+    "failed": 0
+  },
+  "hits": {
+    "total": 5,
+    "max_score": 5.753944,
+    "hits": [
+      {
+        "_index": "foo_bar",
+        "_type": "vendor",
+        "_id": "803",
+        "_score": 4.7279778,
+        "fields": {
+          "id": [
+            803
+          ]
+        }
+      },
+      {
+        "_index": "foo_bar",
+        "_type": "vendor",
+        "_id": "790",
+        "_score": 4.2661333,
+        "fields": {
+          "id": [
+            790
+          ]
+        }
+      },
+      {
+        "_index": "foo_bar",
+        "_type": "vendor",
+        "_id": "801",
+        "_score": 4.2661333,
+        "fields": {
+          "id": [
+            801
+          ]
+        }
+      },
+      {
+        "_index": "foo_bar",
+        "_type": "vendor",
+        "_id": "820",
+        "_score": 4.0277605,
+        "fields": {
+          "id": [
+            820
+          ]
+        }
+      },
+      {
+        "_index": "foo_bar",
+        "_type": "vendor",
+        "_id": "768",
+        "_score": 3.4454803,
+        "fields": {
+          "id": [
+            768
+          ]
+        }
+      }
+    ]
+  }
+}
