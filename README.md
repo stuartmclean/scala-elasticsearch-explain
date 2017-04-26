@@ -1,4 +1,9 @@
-Elasticsearch Explain
+# Elasticsearch Explain
+
+Makes Elasticsearch "_explain" output much more readable for us mortals.
+
+### Usage:
+Just pass in connection data and your query and get a nice result string.
 
 Arguments (should be supplied in json format):
 - hostname
@@ -7,12 +12,14 @@ Arguments (should be supplied in json format):
 - endpoint
 - query
 
+### Example Input:
+
 ```
 {
-    "hostname": "172.28.128.101",
+    "hostname": "127.0.0.1",
     "port": 9200,
     "scheme": "http",
-    "endpoint": "foodpanda_rw_development_en/vendor",
+    "endpoint": "foobar/baz",
     "query": {
         "bool": {
             "should": [
@@ -38,3 +45,8 @@ Arguments (should be supplied in json format):
 }
 ```
     
+### Example Output:
+```
+1: name.ngram: 9.3750007910499461: name.edgengram: 12.5000010547332631: name: 121.875010283649271: name.multilanguage: 56.25000474629965
+2: name.ngram: 5.9579716700171571: name.edgengram: 7.9439622981730411: name: 66.388834849349421: name.multilanguage: 30.640997895347077
+```
