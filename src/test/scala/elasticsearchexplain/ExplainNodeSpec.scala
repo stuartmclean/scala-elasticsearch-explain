@@ -6,7 +6,7 @@ import play.api.libs.json._
 import scala.io.Source
 
 class ExplainNodeSpec extends FlatSpec with Matchers {
-  val fileContent = Source.fromInputStream(getClass.getResourceAsStream("/fixtures/testExplain.json")).getLines.mkString
+  val fileContent = Source.fromInputStream(getClass.getResourceAsStream("/fixtures/testExplainSimple1.json")).getLines.mkString
   val testData = Json.parse(fileContent)
 
   it should "return all children" in {
