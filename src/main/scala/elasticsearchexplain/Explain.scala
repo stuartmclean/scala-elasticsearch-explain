@@ -6,12 +6,14 @@ import play.api.libs.json._
 
 object Explain extends App {
 
-  if (args.length == 0) {
-    println("no configuration given")
-    sys.exit(-1)
+  val config: JsValue = sys.env.get("CONFIG") match {
+    case Some(c) => Json.parse(c)
+    case None => if (args.length == 0) {
+      throw new IllegalArgumentException("no configuration given")
+    } else {
+      Json.parse(args(0))
+    }
   }
-
-  val config = Json.parse(args(0))
 
   val restClient = RestClient.builder(
     new HttpHost((config \ "hostname").as[String], (config \ "port").as[Int], (config \ "scheme").as[String])).build()
