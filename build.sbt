@@ -11,3 +11,7 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.1" % Test,
   "org.mockito" % "mockito-core" % "2.7.22" % Test
 )
+
+enablePlugins(JavaAppPackaging)
+
+enablePlugins(DockerPlugin)
